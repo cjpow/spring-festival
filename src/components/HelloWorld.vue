@@ -92,6 +92,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@font-face {
+  font-family: 'HanyiSentyJournal';
+  src: url('../assets/HanyiSentyJournal.ttf');
+}
+
+@font-face {
+  font-family: 'HanyiSentyDiary';
+  src: url('../assets/HanyiSentyDiary.ttf');
+}
   .wrapper{
     display: flex;
     align-items: center;
@@ -99,7 +108,7 @@ export default {
     height: 100vh;
     width: 800px;
     margin: 0 auto;
-    font-family: "楷体GB2312";
+    font-family: "HanyiSentyDiary";
     position: relative;
 
     .col{
