@@ -28,14 +28,14 @@
     </div>
     <div class="center col">
       <span :class="[{hide}]">蒋</span>氏門中高曾远祖
-      &nbsp;&nbsp;
+      &nbsp;
       <div>
         <p class="span">外戚</p>
         <p class="span">内亲</p>
       </div>
-      &nbsp;&nbsp;
+      &nbsp;
       老少亡魂
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;
       香位均分
     </div>
     <div class="right col bian">
@@ -114,6 +114,7 @@ export default {
     font-family: "方正硬笔楷书";
     position: relative;
     white-space: nowrap;
+    padding-top: 50px;
 
     .col{
       display: flex;
@@ -123,20 +124,21 @@ export default {
     }
 
     .center{
-      font-size: 24px;
+      font-size: 29px;
       letter-spacing: 12px;
+      font-weight: bold;
 
       div{
         display: flex;
         flex-direction: column-reverse;
         p{
-          margin: 0 66px;
+          margin: 0 60px;
         }
       }
     }
 
     .bian{
-      font-size: 19px;
+      font-size: 22px;
       letter-spacing: 8px;
 
       div{
@@ -144,7 +146,7 @@ export default {
         flex-direction: column-reverse;
 
         p{
-          margin: 0 66px;
+          margin: 0 42px;
         }
       }
     }
