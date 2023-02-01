@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" @click="hide = !hide">
     <div class="left col bian">
       天运农历
       &nbsp;
@@ -72,8 +72,6 @@
       &nbsp;
       叩
     </div>
-
-    <button class="btn" @click="hide = !hide">toggle</button>
   </div>
 </template>
 
