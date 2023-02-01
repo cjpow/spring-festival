@@ -1,32 +1,79 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="wrapper">
+    <div class="left col bian">
+      天运农历
+      &nbsp;
+      <div :class="[{hide}]">
+        <p>辛丑</p>
+        <p>庚子</p>
+      </div>
+      &nbsp;
+      年
+      &nbsp;
+      <div>
+        <p>正</p>
+        <p>腊</p>
+      </div>
+      &nbsp;
+      月
+      &nbsp;
+      <div :class="[{hide}]">
+        <p>初一</p>
+        <p>三十</p>
+      </div>
+      &nbsp;
+      吉日
+      &nbsp;&nbsp;&nbsp;
+      火中化纳
+    </div>
+    <div class="center col">
+      <span :class="[{hide}]">蒋</span>氏門中高曾远祖
+      &nbsp;&nbsp;
+      <div>
+        <p class="span">外戚</p>
+        <p class="span">内亲</p>
+      </div>
+      &nbsp;&nbsp;
+      老少亡魂
+      &nbsp;&nbsp;&nbsp;
+      香位均分
+    </div>
+    <div class="right col bian">
+      恭逢
+      &nbsp;
+      <div :class="[{hide}]">
+        <p>新春</p>
+        <p>岁暮</p>
+      </div>
+      &nbsp;
+      之期虔俱
+      &nbsp;
+      <div>
+        <p>长钱</p>
+        <p>冥洋</p>
+      </div>
+      &nbsp;
+      若干
+      &nbsp;
+      <div>
+        <p>株 </p>
+        <p>圆</p>
+      </div>
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;
+      奉上
+    </div>
+
+    <div class="user">
+      化帛人
+      &nbsp;
+      <span :class="[{hide}]">蒋康友</span>
+      &nbsp;
+      叩
+    </div>
+
+    <button class="btn" @click="hide = !hide">toggle</button>
   </div>
 </template>
 
@@ -35,24 +82,78 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      hide: true
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 800px;
+    margin: 0 auto;
+    font-family: "楷体GB2312";
+    position: relative;
+
+    .col{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: tb-rl;
+    }
+
+    .center{
+      font-size: 28px;
+      letter-spacing: 12px;
+
+      div{
+        display: flex;
+        flex-direction: column-reverse;
+        p{
+          margin: 0 66px;
+        }
+      }
+    }
+
+    .bian{
+      font-size: 22px;
+      letter-spacing: 8px;
+
+      div{
+        display: flex;
+        flex-direction: column-reverse;
+
+        p{
+          margin: 0 66px;
+        }
+      }
+    }
+
+    .hide{
+      opacity: 0;
+    }
+
+    .btn{
+      position: fixed;
+      left: 10px;
+      top: 10px;
+    }
+
+    .user{
+      position: absolute;
+      left: 32.3%;
+      transform: translateX(-50%);
+      writing-mode: tb-rl;
+      top: 63vh;
+
+      @extend .bian;
+    }
+  }
 </style>
