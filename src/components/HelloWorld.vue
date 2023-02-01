@@ -10,7 +10,7 @@
       &nbsp;
       年
       &nbsp;
-      <div>
+      <div :class="[{hide}]">
         <p>正</p>
         <p>腊</p>
       </div>
@@ -99,6 +99,11 @@ export default {
   font-family: 'HanyiSentyDiary';
   src: url('../assets/HanyiSentyDiary.ttf');
 }
+
+@font-face {
+  font-family: '方正硬笔楷书';
+  src: url('../assets/方正硬笔楷书.ttf');
+}
   .wrapper{
     display: flex;
     align-items: center;
@@ -106,8 +111,9 @@ export default {
     height: 100vh;
     width: 800px;
     margin: 0 auto;
-    font-family: "HanyiSentyDiary";
+    font-family: "方正硬笔楷书";
     position: relative;
+    white-space: nowrap;
 
     .col{
       display: flex;
@@ -117,7 +123,7 @@ export default {
     }
 
     .center{
-      font-size: 28px;
+      font-size: 24px;
       letter-spacing: 12px;
 
       div{
@@ -130,7 +136,7 @@ export default {
     }
 
     .bian{
-      font-size: 22px;
+      font-size: 19px;
       letter-spacing: 8px;
 
       div{
