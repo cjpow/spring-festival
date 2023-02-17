@@ -90,15 +90,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@font-face {
-  font-family: 'HanyiSentyJournal';
-  src: url('../assets/HanyiSentyJournal.ttf');
-}
-
-@font-face {
-  font-family: 'HanyiSentyDiary';
-  src: url('../assets/HanyiSentyDiary.ttf');
-}
+//@font-face {
+//  font-family: 'HanyiSentyJournal';
+//  src: url('../assets/HanyiSentyJournal.ttf');
+//}
+//
+//@font-face {
+//  font-family: 'HanyiSentyDiary';
+//  src: url('../assets/HanyiSentyDiary.ttf');
+//}
 
 @font-face {
   font-family: '方正硬笔楷书';
