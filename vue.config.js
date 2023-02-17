@@ -1,4 +1,4 @@
 module.exports = {
   outputDir: 'docs',
-  publicPath: '/' // 基本路径
+  publicPath: '/spring-festival' // 基本路径
 }
