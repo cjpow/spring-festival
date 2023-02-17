@@ -4,8 +4,8 @@
       天运农历
       &nbsp;
       <div :class="[{hide}]">
-        <p>辛丑</p>
-        <p>庚子</p>
+        <p>甲辰</p>
+        <p>癸卯</p>
       </div>
       &nbsp;
       年
