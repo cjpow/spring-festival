@@ -77,6 +77,7 @@ export default {
     background-position: left center;
     z-index: -1;
     //animation: fade 2s infinite ease-in-out alternate-reverse;
+    background-color: rgba(105,99,191);
   }
 
   header {
