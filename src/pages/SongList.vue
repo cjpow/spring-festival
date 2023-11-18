@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       filterTxt: '',
-      showSearchInput: true,
+      showSearchInput: false,
 
       songList: langJson,
       clickIndex: undefined
