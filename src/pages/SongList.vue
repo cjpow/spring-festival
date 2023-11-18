@@ -85,7 +85,6 @@ export default {
     border-bottom: 1px solid white;
     line-height: $headerHeight;
     font-weight: bold;
-    font-family: "方正硬笔楷书";
     color: mediumpurple;
     width: calc(100% - 40px);
     margin: 0 auto;
@@ -154,18 +153,18 @@ export default {
 
       .song-item {
         width: 49%;
-        height: 56px;
-        font-size: 27px;
+        height: 58px;
         text-align: left;
-        padding-left: 20px;
+        padding-left: 10px;
         display: flex;
 
         .id {
           font-style: italic;
-          margin-right: 10px;
+          margin-right: 8px;
           display: flex;
           align-items: center;
           justify-content: flex-start;
+          font-size: 23px;
         }
 
         .name {
@@ -174,8 +173,8 @@ export default {
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          line-height: 1.1;
-          font-family: "方正硬笔楷书";
+          line-height: 1.2;
+          font-size: 26px;
         }
 
         &.active {

@@ -13,10 +13,6 @@ export default {
 
 <style lang="scss">
 @import "~@/assets/styles/reset.scss";
-@font-face {
-  font-family: '方正硬笔楷书';
-  src: url('~@/assets/方正硬笔楷书.ttf');
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
