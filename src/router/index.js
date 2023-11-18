@@ -6,7 +6,7 @@ const routes = [
   {
     path: '/',
     name: 'SpringMain',
-    component: () => import(/* webpackChunkName: "SpringMain" */ '../pages/SpringMain')
+    component: () => import(/* webpackChunkName: "SpringMain" */ '../pages/SongList')
   },
   {
     path: '/songList',
