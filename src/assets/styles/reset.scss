@@ -1,0 +1,60 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+*{ box-sizing: border-box; -webkit-tap-highlight-color: transparent}
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+// 禁止长按选择
+-webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -webkit-overflow-scrolling: touch;
+// 隐藏滚动条
+scrollbar-width: none;
+&::-webkit-scrollbar {
+     display: none;
+ }
+}
+input {
+    -webkit-user-select: auto !important;
+}
+html, body {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    font-family: "MSYH", "PingFang SC", Arial,"SimHei", "Helvetica Neue",Helvetica,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+a {
+    text-decoration:none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+a:hover { text-decoration: none; }
+ul{margin: 0;padding: 0;}
+li{list-style-type: none;}
+p{margin: 0;}
+textarea{
+    user-select:text !important;
+    -webkit-user-select:text !important;
+}
