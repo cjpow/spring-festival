@@ -1,6 +1,6 @@
 <template>
   <div class="song-list-wrapper">
-    <header class="anniu">歌单列表</header>
+    <header>歌单列表</header>
     <div class="search-input" v-if="showSearchInput">
       <input type="text" v-model="filterTxt" autofocus placeholder="请输入关键词">
     </div>
@@ -49,9 +49,6 @@ export default {
         this.filterTxt = ''
       }
     }
-  },
-  mounted () {
-    document.title = '选歌单'
   }
 }
 </script>
