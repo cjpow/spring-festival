@@ -206,6 +206,7 @@ export default {
   },
   mounted () {
     this.loadFromStorage()
+    if (window.innerWidth < 768) document.documentElement.style.fontSize = '32px'
   },
   computed: {
     // 每个订单在各路段的费用及总计 { orderId: { sectionCosts: number[], total: number } }
