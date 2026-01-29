@@ -12,6 +12,11 @@ const routes = [
     path: '/songList',
     name: 'SongList',
     component: () => import(/* webpackChunkName: "SongList" */ '../pages/SongList')
+  },
+  {
+    path: '/sharing',
+    name: 'sharing',
+    component: () => import(/* webpackChunkName: "SongList" */ '../pages/Sharing.vue')
   }
 ]
 
