@@ -39,7 +39,7 @@
       <div class="panel-left">
         <div class="orders-global">
           <h2 class="block-title">订单管理</h2>
-          <p class="hint">订单在此统一维护，右侧每个路段可勾选「参与该路段的订单」。</p>
+          <p class="hint">订单在此统一维护，右（移动端在下放）侧每个路段可勾选「参与该路段的订单」。</p>
           <div v-for="(order, orderIndex) in orders" :key="order.id" class="order-row">
             <label>
               名称:
@@ -75,58 +75,61 @@
         </div>
       </div>
       <div class="panel-right">
-        <div v-for="(section, sectionIndex) in highwaySections" :key="section.id" class="section-container">
-          <div class="section-header">
-            <h2>{{ section.name || `高速路段 ${sectionIndex + 1}` }}</h2>
-            <button @click="removeSection(sectionIndex)" class="btn-remove">删除路段</button>
-          </div>
+        <div class="highway-sections-wrap">
+          <h2 class="highway-sections-wrap-title">高速费列表</h2>
+          <div v-for="(section, sectionIndex) in highwaySections" :key="section.id" class="section-container">
+            <div class="section-header">
+              <h2>{{ section.name || `高速路段 ${sectionIndex + 1}` }}</h2>
+              <button @click="removeSection(sectionIndex)" class="btn-remove">删除路段</button>
+            </div>
 
-          <div class="section-info">
-            <label>
-              路段名称:
-              <input
-                v-model="section.name"
-                type="text"
-                placeholder="例如：高速费1"
-              />
-            </label>
-            <label>
-              总费用:
-              <input
-                v-model.number="section.totalCost"
-                type="number"
-                step="0.01"
-                min="0"
-                placeholder="输入总费用"
-                @input="handleInputChange"
-              />
-            </label>
-          </div>
-
-          <div class="participating-orders">
-            <h3>参与本路段的订单</h3>
-            <div v-if="orders.length === 0" class="no-orders-hint">请先在左侧「订单管理」添加订单。</div>
-            <div v-else class="checkbox-list">
-              <label
-                v-for="order in orders"
-                :key="order.id"
-                class="checkbox-item"
-              >
+            <div class="section-info">
+              <label>
+                路段名称:
                 <input
-                  type="checkbox"
-                  :checked="section.participatingOrderIds.includes(order.id)"
-                  @change="toggleSectionOrder(sectionIndex, order.id, $event.target.checked)"
+                  v-model="section.name"
+                  type="text"
+                  placeholder="例如：高速费1"
                 />
-                <span class="order-name-tag" :style="orderTagStyle(order)">{{ order.name || `订单${order.id}` }}</span>
-                <span class="passengers-tag">({{ order.passengers }}人)</span>
-                <span v-if="getOrderCostInSection(section, order.id) !== null" class="cost-tag">
-                  ¥{{ getOrderCostInSection(section, order.id).toFixed(2) }}
-                </span>
+              </label>
+              <label>
+                总费用:
+                <input
+                  v-model.number="section.totalCost"
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  placeholder="输入总费用"
+                  @input="handleInputChange"
+                />
               </label>
             </div>
+
+            <div class="participating-orders">
+              <h3>参与本路段的订单</h3>
+              <div v-if="orders.length === 0" class="no-orders-hint">请先在左侧「订单管理」添加订单。</div>
+              <div v-else class="checkbox-list">
+                <label
+                  v-for="order in orders"
+                  :key="order.id"
+                  class="checkbox-item"
+                >
+                  <input
+                    type="checkbox"
+                    :checked="section.participatingOrderIds.includes(order.id)"
+                    @change="toggleSectionOrder(sectionIndex, order.id, $event.target.checked)"
+                  />
+                  <span class="order-name-tag" :style="orderTagStyle(order)">{{ order.name || `订单${order.id}` }}</span>
+                  <span class="passengers-tag">({{ order.passengers }}人)</span>
+                  <span v-if="getOrderCostInSection(section, order.id) !== null" class="cost-tag">
+                    ¥{{ getOrderCostInSection(section, order.id).toFixed(2) }}
+                  </span>
+                </label>
+              </div>
+            </div>
           </div>
+          <button @click="addSection" class="btn-add-section">+ 添加高速路段</button>
         </div>
-        <button @click="addSection" class="btn-add-section">+ 添加高速路段</button>
       </div>
     </div>
 
@@ -178,7 +181,7 @@ export default {
   data () {
     return {
       ...defaultData(),
-      showUsageRules: false
+      showUsageRules: true
     }
   },
   watch: {
@@ -442,7 +445,7 @@ export default {
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    margin-bottom: 16px;
+    margin-bottom: 36px;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -462,6 +465,47 @@ export default {
   .panel-right {
     flex: 1;
     min-width: 0;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .highway-sections-wrap {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    background: #f8fafc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+    @media (max-width: 768px) {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .highway-sections-wrap-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 12px 0;
+      color: #334155;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    .section-container {
+      margin-bottom: 12px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn-add-section {
+      margin-top: 12px;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   .orders-global {
@@ -718,7 +762,7 @@ export default {
 
     &.summary-top {
       margin-top: 0;
-      margin-bottom: 16px;
+      margin-bottom: 46px;
     }
     border-radius: 10px;
     padding: 12px 14px;
