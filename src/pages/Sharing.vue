@@ -150,6 +150,7 @@
 </template>
 
 <script>
+document.title = '高速费计算器'
 const STORAGE_KEY = 'highway-cost-calculator-data'
 
 // 订单可选颜色（用于区分订单）
