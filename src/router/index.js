@@ -6,7 +6,7 @@ const routes = [
   {
     path: '/',
     name: 'SpringMain',
-    component: () => import(/* webpackChunkName: "SpringMain" */ '../pages/SongList')
+    component: () => import(/* webpackChunkName: "SpringMain" */ '../pages/SpringMain.vue')
   },
   {
     path: '/songList',

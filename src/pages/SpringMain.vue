@@ -4,8 +4,9 @@
       天运农历
       &nbsp;
       <div :class="[{hide}]">
-        <p>甲辰</p>
-        <p>癸卯</p>
+        <p>丙午</p>
+        <p>乙巳</p>
+<!--        <p>甲辰</p>-->
       </div>
       &nbsp;
       年
@@ -19,7 +20,7 @@
       &nbsp;
       <div :class="[{hide}]">
         <p>初一</p>
-        <p>三十</p>
+        <p>除夕</p>
       </div>
       &nbsp;
       吉日
